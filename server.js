@@ -13,8 +13,8 @@ const https = require("https");
 const app = express();
 
 const options = {
-  key: fs.readFileSync("~/etc/letsencrypt/live/smallify.link/fullchain.pem"),
-  cert: fs.readFileSync("~/etc/letsencrypt/live/smallify.link/privkey.pem"),
+  key: fs.readFileSync("/etc/letsencrypt/live/smallify.link/fullchain.pem"),
+  cert: fs.readFileSync("/etc/letsencrypt/live/smallify.link/privkey.pem"),
 };
 
 const server = https.createServer(options, app);
