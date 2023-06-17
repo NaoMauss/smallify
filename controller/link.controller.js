@@ -1,5 +1,6 @@
 const { ObjectId } = require("mongodb");
 const LinkModel = require("../models/links.model");
+const StatsModel = require("../models/stats.model");
 const ObjectID = require("mongoose").Types.ObjectId;
 const randomstring = require("randomstring");
 
