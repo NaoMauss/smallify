@@ -38,7 +38,7 @@ module.exports.createLink = async (req, res) => {
     created_at: Date.now(),
   });
   savelinktodb.save();
-  res.send(process.env.CLIENT_URL + "a/" + randomid);
+  res.send(process.env.CLIENT_URL + randomid);
 };
 
 module.exports.redirectToLink = async (req, res) => {
