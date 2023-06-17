@@ -13,11 +13,6 @@ const fs = require("fs");
 const https = require("https");
 const app = express();
 
-// const options = {
-//   key: fs.readFileSync("/etc/letsencrypt/live/smallify.link/fullchain.pem"),
-//   cert: fs.readFileSync("/etc/letsencrypt/live/smallify.link/privkey.pem"),
-// };
-
 const privateKeyPath = "/etc/letsencrypt/live/smallify.link/privkey.pem";
 const certificatePath = "/etc/letsencrypt/live/smallify.link/fullchain.pem";
 
