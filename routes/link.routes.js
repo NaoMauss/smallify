@@ -4,5 +4,6 @@ const linkController = require("../controller/link.controller");
 const rooter = require("./user.routes");
 
 rooterLink.post("/createlink", linkController.createLink);
+rooterLink.post("/searchlinkdata", linkController.searchLinkData)
 
 module.exports = rooterLink;
