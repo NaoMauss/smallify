@@ -9,8 +9,16 @@ require("./config/db.js");
 const { checkUser, requireAuth } = require("./middleware/auth.middleware");
 const cors = require("cors");
 const cron = require("node-cron");
-
+const https = require("https");
 const app = express();
+
+const options = {
+  key: fs.readFileSync("~/etc/letsencrypt/live/smallify.link/fullchain.pem"),
+  cert: fs.readFileSync("~/etc/letsencrypt/live/smallify.link/privkey.pem"),
+};
+
+const server = https.createServer(options, app);
+
 app.use(express.json());
 app.use(
   express.urlencoded({
@@ -31,6 +39,6 @@ app.use("/api/link", linkRoutes);
 app.get("/:short_url", linkController.redirectToLink);
 
 //server
-app.listen(process.env.PORT, () => {
+server.listen(process.env.PORT, () => {
   console.log(`listening on port ${process.env.PORT}`);
 });
