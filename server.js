@@ -25,7 +25,7 @@ const httpsOptions = {
 };
 
 const server = https.createServer(httpsOptions, app);
-
+app.use(cors());
 app.use(express.json());
 app.use(
   express.urlencoded({
